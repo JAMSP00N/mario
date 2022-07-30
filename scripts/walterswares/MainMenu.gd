@@ -1,5 +1,6 @@
 extends Control
 
+export(AudioStream) var bgm
+
 func _ready():
-	print("good morning")
-	EventBus.emit_signal("bgm_changed", {"playing": false})
+	EventBus.emit_signal("bgm_changed", {"playing": true, "stream": bgm})
