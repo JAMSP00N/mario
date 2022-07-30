@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/title/TitleMenuButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/walterswares/Logo.gd" type="Script" id=2]
+[ext_resource path="res://scenes/title/Background.gd" type="Script" id=3]
+[ext_resource path="res://scenes/levels/sokoban/menu/SokobanLevelButton.gd" type="Script" id=4]
+[ext_resource path="res://sprites/wwbg-tile.png" type="Texture" id=5]
+[ext_resource path="res://sprites/wwmenuicon.png" type="Texture" id=6]
+[ext_resource path="res://sprites/wwlogo.png" type="Texture" id=7]
+[ext_resource path="res://scripts/walterswares/MainMenu.gd" type="Script" id=8]
+[ext_resource path="res://audio/music/a little funk called mario.mp3" type="AudioStream" id=9]
+[ext_resource path="res://scripts/Audio.gd" type="Script" id=10]
+
+[node name="root" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 8 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="bg" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 0.7, 0.7, 0.7, 1 )
+position = Vector2( -433, -225 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 1080 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+scroll_rate = Vector2( 10, -10 )
+
+[node name="logo" type="TextureRect" parent="CanvasLayer"]
+margin_left = 212.0
+margin_top = 50.0
+margin_right = 812.0
+margin_bottom = 350.0
+rect_pivot_offset = Vector2( 300, 150 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 7 )
+stretch_mode = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="begin_button" parent="CanvasLayer" instance=ExtResource( 1 )]
+anchor_top = 0.226667
+anchor_bottom = 0.226667
+margin_left = 465.0
+margin_top = 304.0
+margin_right = 559.0
+margin_bottom = 356.0
+shortcut_in_tooltip = false
+text = "BEGIN"
+icon = ExtResource( 6 )
+script = ExtResource( 4 )
+redirect_scene = "res://scenes/levels/walterswares/map_select.tscn"
+
+[node name="back_button" parent="CanvasLayer" instance=ExtResource( 1 )]
+anchor_top = 0.213333
+anchor_bottom = 0.213333
+margin_left = 429.0
+margin_top = 360.0
+margin_right = 595.0
+margin_bottom = 412.0
+shortcut_in_tooltip = false
+text = "BACK TO HUB"
+icon = ExtResource( 6 )
+script = ExtResource( 4 )
+
+[node name="audio" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="audio"]
+pause_mode = 2
+stream = ExtResource( 9 )
+volume_db = -20.0
+autoplay = true
+bus = "music"
