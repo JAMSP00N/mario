@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_DEFAULT.png" type="Texture" id=1]
-[ext_resource path="res://scripts/walterswares/MapRegion.gd" type="Script" id=2]
+[ext_resource path="res://scripts/walterswares/MouseSurrogate.gd" type="Script" id=2]
 [ext_resource path="res://scripts/walterswares/Map.gd" type="Script" id=3]
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_ELECTRONICS.png" type="Texture" id=4]
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_WALTER.png" type="Texture" id=5]
@@ -12,11 +12,19 @@
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_GROCERY.png" type="Texture" id=10]
 [ext_resource path="res://scripts/walterswares/MapRegion.gd" type="Script" id=11]
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 1.0
+
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
 
-[node name="root" type="CanvasLayer"]
-layer = 99
+[node name="map_select" type="Node"]
+
+[node name="mouse_surrogate" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="mouse_surrogate"]
+shape = SubResource( 2 )
 
 [node name="store01" type="Sprite" parent="."]
 position = Vector2( 512, 300 )
@@ -28,7 +36,7 @@ default_sprite = ExtResource( 1 )
 position = Vector2( -512, -300 )
 z_index = 40
 collision_layer = 128
-script = ExtResource( 2 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -124,17 +132,17 @@ rotation = -4.26209
 z_index = 5
 shape = SubResource( 1 )
 
-[connection signal="input_event" from="store01/region_grocery" to="store01/region_grocery" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_grocery" to="store01/region_grocery" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_pets" to="store01/region_pets" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_pets" to="store01/region_pets" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_clothing" to="store01/region_clothing" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_clothing" to="store01/region_clothing" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_electronics" to="store01/region_electronics" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_electronics" to="store01/region_electronics" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_toys" to="store01/region_toys" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_toys" to="store01/region_toys" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_hygiene" to="store01/region_hygiene" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_hygiene" to="store01/region_hygiene" method="_on_mouse_exited"]
-[connection signal="input_event" from="store01/region_walter" to="store01/region_walter" method="_on_input"]
-[connection signal="mouse_exited" from="store01/region_walter" to="store01/region_walter" method="_on_mouse_exited"]
+[connection signal="area_entered" from="store01/region_grocery" to="store01/region_grocery" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_grocery" to="store01/region_grocery" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_pets" to="store01/region_pets" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_pets" to="store01/region_pets" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_clothing" to="store01/region_clothing" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_clothing" to="store01/region_clothing" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_electronics" to="store01/region_electronics" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_electronics" to="store01/region_electronics" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_toys" to="store01/region_toys" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_toys" to="store01/region_toys" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_hygiene" to="store01/region_hygiene" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_hygiene" to="store01/region_hygiene" method="_on_area_exited"]
+[connection signal="area_entered" from="store01/region_walter" to="store01/region_walter" method="_on_area_entered"]
+[connection signal="area_exited" from="store01/region_walter" to="store01/region_walter" method="_on_area_exited"]
