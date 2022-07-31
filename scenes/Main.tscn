@@ -35,7 +35,7 @@ pause_mode = 2
 material = SubResource( 2 )
 margin_right = 1024.0
 margin_bottom = 600.0
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="Main" type="Viewport" parent="ViewportContainer"]
 pause_mode = 1
