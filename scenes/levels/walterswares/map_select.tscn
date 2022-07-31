@@ -32,7 +32,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_grocery"
+microgame_folder = "res://scenes/levels/walterswares/store01_grocery"
 select_sprite = ExtResource( 10 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_grocery"]
@@ -46,7 +46,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_pets"
+microgame_folder = "res://scenes/levels/walterswares/store01_pets"
 select_sprite = ExtResource( 7 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_pets"]
@@ -60,7 +60,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_clothing"
+microgame_folder = "res://scenes/levels/walterswares/store01_clothing"
 select_sprite = ExtResource( 8 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_clothing"]
@@ -74,7 +74,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_electronics"
+microgame_folder = "res://scenes/levels/walterswares/store01_electronics"
 select_sprite = ExtResource( 4 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_electronics"]
@@ -88,7 +88,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_toys"
+microgame_folder = "res://scenes/levels/walterswares/store01_toys"
 select_sprite = ExtResource( 9 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_toys"]
@@ -102,7 +102,7 @@ script = ExtResource( 11 )
 __meta__ = {
 "_edit_lock_": true
 }
-microgame_folder = "store01_hygiene"
+microgame_folder = "res://scenes/levels/walterswares/store01_hygiene"
 select_sprite = ExtResource( 6 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_hygiene"]

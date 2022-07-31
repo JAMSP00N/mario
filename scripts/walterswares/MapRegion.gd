@@ -1,6 +1,6 @@
 extends Area2D
 
-export(String) var microgame_folder
+export(String, DIR) var microgame_folder
 export(Texture) var select_sprite
 
 var parent
