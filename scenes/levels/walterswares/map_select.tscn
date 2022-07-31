@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_DEFAULT.png" type="Texture" id=1]
 [ext_resource path="res://scripts/walterswares/MouseSurrogate.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_TOYS.png" type="Texture" id=9]
 [ext_resource path="res://sprites/walterswares/menu/store1_floorplan_GROCERY.png" type="Texture" id=10]
 [ext_resource path="res://scripts/walterswares/MapRegion.gd" type="Script" id=11]
+[ext_resource path="res://scenes/ui/Themes/Default/default.tres" type="Theme" id=12]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 1.0
@@ -25,6 +26,17 @@ script = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="mouse_surrogate"]
 shape = SubResource( 2 )
+
+[node name="title_label" type="RichTextLabel" parent="."]
+anchor_right = 0.293
+anchor_bottom = 0.117
+margin_left = 630.0
+margin_top = 50.0
+margin_right = 579.968
+margin_bottom = 27.8
+rect_scale = Vector2( 1.5, 1.5 )
+theme = ExtResource( 12 )
+bbcode_enabled = true
 
 [node name="store01" type="Sprite" parent="."]
 position = Vector2( 512, 300 )
@@ -42,6 +54,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_grocery"
 select_sprite = ExtResource( 10 )
+title = "GROCERY"
+color = Color( 0.568627, 0.854902, 0.631373, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_grocery"]
 polygon = PoolVector2Array( 151, 180, 166, 336, 320, 330, 260, 149, 188, 153, 196, 177 )
@@ -56,6 +70,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_pets"
 select_sprite = ExtResource( 7 )
+title = "PETS"
+color = Color( 1, 0.803922, 1, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_pets"]
 polygon = PoolVector2Array( 272, 150, 296, 221, 421, 212, 381, 142 )
@@ -70,6 +86,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_clothing"
 select_sprite = ExtResource( 8 )
+title = "CLOTHING"
+color = Color( 0.776471, 0.92549, 1, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_clothing"]
 polygon = PoolVector2Array( 298, 233, 352, 365, 560, 352, 537, 306, 563, 303, 511, 222 )
@@ -84,6 +102,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_electronics"
 select_sprite = ExtResource( 4 )
+title = "ELECTRONICS"
+color = Color( 1, 0.694118, 0.0313726, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_electronics"]
 polygon = PoolVector2Array( 439, 213, 620, 202, 541, 122, 415, 125, 427, 141, 395, 143 )
@@ -98,6 +118,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_toys"
 select_sprite = ExtResource( 9 )
+title = "TOYS"
+color = Color( 0.756863, 0.470588, 0.666667, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_toys"]
 polygon = PoolVector2Array( 523, 222, 582, 303, 712, 293, 631, 212 )
@@ -112,6 +134,8 @@ __meta__ = {
 }
 microgame_folder = "res://scenes/levels/walterswares/store01_hygiene"
 select_sprite = ExtResource( 6 )
+title = "HYGIENE"
+color = Color( 0.196078, 0.54902, 0.654902, 1 )
 
 [node name="shape" type="CollisionPolygon2D" parent="store01/region_hygiene"]
 polygon = PoolVector2Array( 561, 315, 596, 373, 472, 381, 497, 427, 505, 428, 554, 452, 886, 434, 896, 425, 758, 295 )
@@ -125,6 +149,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 select_sprite = ExtResource( 5 )
+title = "CHAT WITH WALTER"
+color = Color( 1, 0.964706, 0.309804, 1 )
 
 [node name="shape" type="CollisionShape2D" parent="store01/region_walter"]
 position = Vector2( 244, 392 )
